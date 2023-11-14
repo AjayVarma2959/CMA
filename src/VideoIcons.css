@@ -1,0 +1,46 @@
+.video-icons-enter {
+  
+ top: 60px;
+  opacity: 0;
+}
+
+/* Active state (when the component is entering) */
+.video-icons-enter-active {
+  top: 120px;
+  opacity: 2;
+  transition: transform 1100ms, opacity 1100ms;
+}
+
+/* Exiting state (when the component is leaving) */
+.video-icons-exit {
+  top: 120px;
+  opacity: 1;
+}
+
+/* Active state (when the component is exiting) */
+.video-icons-exit-active {
+  top: 60px;
+  opacity: 0;
+  transition: transform 500ms, opacity 500ms;
+}
+
+.video-icons {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  background-color: lightblue;
+  padding: 10px;
+  position: absolute;
+  top: 1105px;
+  left: 0;
+  height: 490px;
+  
+  transition: left 0.5s ease-in-out;
+  transform: translateY(-100%);
+  font-size: x-large;
+  gap: 18px;
+  color: #4358f1;
+  z-index: 2;
+  cursor: pointer;
+}
+

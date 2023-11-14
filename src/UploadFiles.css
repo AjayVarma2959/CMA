@@ -1,0 +1,179 @@
+/* Navbar.css */
+.navbar {
+    background: linear-gradient(to right, #e70ba1, #09a6c6,  #e70ba1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      height: 42px;
+    }
+    
+    .logo a {
+      text-decoration: none;
+      margin-bottom: 10px;
+      font-size: 300%;
+      font-family: cursive;
+      color:white;
+    }
+    
+    /* Navbar.css */
+  /* ... (previous styles) ... */
+  
+  .search-bar {
+      padding: 10px;
+      border-radius: 10px; /* Add border radius */
+      
+      
+      
+     
+    }
+  
+    
+    .search-bar input[type="text"] {
+      padding: 15px; /* Increase padding for text input */
+      border: none;
+      border-radius: 10px; /* Add border radius */
+     
+      
+     
+    }
+    
+    .search-bar input[type="text"]:focus {
+      outline: none; /* Remove the default focus outline */
+      box-shadow: 0 0 5px dark rgb(79, 197, 128); 
+      /* Add a subtle box shadow on focus */
+      
+    }
+    .search-bar button {
+      margin-left: 30px; /* Adjust the margin as needed */
+      padding: 5px;
+      margin-top: 2px;
+      padding-bottom: 10px;
+      width: 100px;
+    }
+    
+    /* ... (remaining styles) ... */
+    
+    
+    input[type="text"] {
+      padding: 5px;
+      border: none;
+    }
+    
+   
+    
+   
+    
+    .nav-links {
+      
+      display: flex;
+      gap: 10px; /* Define the constant gap between navbar items */
+    }
+    
+    .nav-links a {
+      background-color:rgb(79, 146, 197);
+      font-size: 20px;
+      font-family: "Open Sans";
+      text-decoration: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center; /* Vertically center the text and the button-like border */
+      color:white;
+      padding: 5px 10px;
+      border: 2px solid transparent; /* Initially transparent border */
+      border-radius: 10px;
+      border: 2px solid black;
+    }
+
+    /* Add this to your Navbar.css */
+.fileuploadh1 {
+  font-size: 34px;  /* or any size you prefer */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #000;  /* or any color you prefer */
+  margin-left: 120px;
+ 
+  margin-top: -43px;  /* add some margin to the top */
+  /* Add any other styles you want for the h1 here */
+}
+
+.uploadcolor{
+  color: rgb(79, 146, 197);
+}
+
+.form-container {
+  margin-top: 80px;
+  display: flex; /* Display form fields in a row */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Add some gap between form fields */
+  width: 1500px;
+}
+
+.form-field {
+  flex: 1; /* Equal width for all form fields */
+  
+}
+
+.form-field label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+.form-field input[type="text"],
+.form-field select,
+.form-field textarea {
+  margin-left: 30px;
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #000; /* Dashed border */
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+
+/* Add this to your Navbar.css */
+
+/* ... (previous styles) ... */
+
+.drag-and-drop-box {
+  display: inline-block; /* Change to inline-block to make them appear side by side */
+  border: 2px dotted #000;
+  border-radius: none;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 200px; /* Adjust margin as needed */
+  width: 400px; /* Adjust width as needed */
+  height: 200px;
+}
+
+.drag-and-drop-box p {
+
+  font-size: 18px;
+  align-items: center;
+  margin-top: 80px;
+}
+
+/* Add any other styles you want for the drag-and-drop boxes here */
+
+/* Inside UploadFiles.css */
+
+.upload-button-for-files {
+  background-color: rgb(79, 146, 197); /* Change the background color as needed */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 24px;
+  margin-left: 680px;
+  margin-top: 40px;
+  
+}
+
+.upload-button-for-files:hover {
+  background-color: #0056b3; /* Change the hover background color as needed */
+}
+

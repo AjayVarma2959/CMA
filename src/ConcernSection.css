@@ -1,0 +1,195 @@
+/* ConcernSection.css */
+.concern-section {
+    text-align: center;
+    padding: 30px;
+    
+  }
+  
+  .h2C{
+    font-family: "Open Sans" ;
+    font-size: 64px;
+    margin-top: 20px;
+  }
+  
+  .concern-content {
+    font-family: "Open Sans" ;
+    font-size: 24px;
+    color: #555;
+  }
+
+  .p1C{
+    font-family: "Open Sans" ;
+    font-size: 22px;
+    margin-top: -60px;
+  }
+  
+  .p2C{
+    font-family: "Open Sans" ;
+    font-size: 22px;
+    margin-top: -20px;
+  }
+  /* Add additional styling as needed for your cards */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center; /* Center the grid horizontally */
+    margin-top: 40px;
+    
+  }
+  
+  .card {
+    width: 650px;
+    height: 300px;
+    background-color: #cbcbcbb4;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 40px;
+    
+  }
+
+  .card .actions {
+    margin-top: 240px;
+  }
+  
+  .card .actions i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333; /* Change the color to your preference */
+  }
+  
+  /* Style individual icons */
+  .card .actions i.fa-thumbs-up {
+    cursor: pointer;
+    color: #007bff; /* Change the color for the Like icon */
+  }
+  
+  .card .actions i.fa-share-square {
+    cursor: pointer;
+    color: #17a2b8; /* Change the color for the Share icon */
+  }
+  
+  .card .actions i.fa-comment {
+    cursor: pointer;
+    color: #28a745; /* Change the color for the Comment icon */
+  }
+  
+  .card .actions i.fa-clock {
+    cursor: pointer;
+    color: #ffc107; /* Change the color for the Watch Later icon */
+  }
+
+  .upload-buttton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color:rgb(79, 146, 197);; /* Change the button color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .gap {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  /* Horizontal line */
+  .horizontal-line {
+    border: none;
+    border-top: 1px solid #3b3b3b; /* Define line style and color */
+   margin-bottom: -20px;
+    background-color: #555;
+  }
+
+
+  .background-after-line {
+    background-color: #373737; /* Example background color */
+    padding: 20px;
+    text-align: center; /* To center the content horizontally */
+  }
+
+
+  /* ConcernSection.css */
+
+/* ... (previous styles) */
+
+/* Email input */
+.email-input {
+    text-align: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+  }
+  
+  .email-input input {
+    width: 120px;
+    height: 25px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  
+  /* ... (previous styles) */
+  
+
+
+  /* ConcernSection.css */
+
+/* ... (previous styles) */
+
+/* Useful Links paragraph */
+.useful-links {
+    color: white;
+    margin-top: -30px;
+    text-align: left;
+    
+  }
+  
+  /* Navigation items */
+  .nav-items-last {
+    color: white;
+    list-style: none;
+    display: flex;
+    
+    padding: 0;
+  }
+  
+  .nav-items-last li {
+    color: white;
+    margin-right: 20px; /* Adjust spacing as needed */
+    margin-top: -20px;
+    font-weight: bold; /* Optionally, make the items bold */
+  }
+  
+  /* ... (previous styles) */
+
+
+
+  /* ConcernSection.css */
+
+/* ... (previous styles) */
+
+/* Contact information */
+.contact-info {
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    margin-top: -50px; /* Adjust spacing as needed */
+  }
+  
+  .contact-info p {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* ... (previous styles) */
+  
+  
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%; /* Display one card per row on smaller screens */
+    }
+  }
+  

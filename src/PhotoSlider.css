@@ -1,0 +1,72 @@
+/* PhotoSlider.css */
+
+/* Container for the entire photo slider */
+.photo-slider {
+  width: 100%; /* Set the maximum width to 50% of the screen width */
+  height: 60vh; /* Set the height to 80% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow to prevent horizontal scrolling */
+  position: relative;
+  background-color: black;
+  
+  
+}
+
+.react-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+}
+
+
+
+
+
+/* Slider controls container */
+.slider-controls {
+  position: absolute;
+  top: 50%; /* Vertically center the controls */
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Slider control buttons */
+.slide-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none; /* Remove default button focus outline */
+  font-family: cursive;
+  border-radius: 50%;
+  font-size: 64px;
+  margin: 0 10px; /* Add some space between buttons */
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the "Previous" button */
+.slide-button:first-child {
+  border-radius: 50%;
+}
+
+/* Styles for the "Next" button */
+.slide-button:last-child {
+  border-radius: 50%;
+}
+
+/* Styles for the "Previous" button on hover */
+.slide-button:first-child:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Styles for the "Next" button on hover */
+.slide-button:last-child:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

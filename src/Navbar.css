@@ -1,0 +1,97 @@
+/* Navbar.css */
+.navbar {
+  background: linear-gradient(to right, #e70ba1, #09a6c6,  #e70ba1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 42px;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 300%;
+    font-family: cursive;
+    color:white;
+  }
+  
+  /* Navbar.css */
+/* ... (previous styles) ... */
+
+.search-bar {
+    padding: 10px;
+    border-radius: 10px; /* Add border radius */
+    
+    
+   
+  }
+
+  
+  .search-bar input[type="text"] {
+    padding: 15px; /* Increase padding for text input */
+    border: none;
+    border-radius: 10px; /* Add border radius */
+    
+   
+  }
+  
+  .search-bar input[type="text"]:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 5px dark rgb(79, 197, 128); 
+    /* Add a subtle box shadow on focus */
+    
+  }
+  .search-bar button {
+    margin-left: 30px; /* Adjust the margin as needed */
+    padding: 5px;
+    margin-top: 2px;
+    padding-bottom: 10px;
+    width: 100px;
+  }
+  
+  /* ... (remaining styles) ... */
+  
+  
+  input[type="text"] {
+    padding: 5px;
+    border: none;
+  }
+  
+  button {
+    font-family: "Open Sans";
+    font-size: 20px;
+    background-color:rgb(79, 146, 197);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+   
+  }
+  
+ 
+  
+  .nav-links {
+    
+    display: flex;
+    gap: 10px; /* Define the constant gap between navbar items */
+  }
+  
+  .nav-links a {
+    background-color:rgb(79, 146, 197);
+    font-size: 20px;
+    font-family: "Open Sans";
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /* Vertically center the text and the button-like border */
+    color:white;
+    padding: 5px 10px;
+    border: 2px solid transparent; /* Initially transparent border */
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  
+  
+  

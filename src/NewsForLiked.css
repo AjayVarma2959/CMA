@@ -1,0 +1,94 @@
+.news-containerLN {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between cards */
+    background-color: lightblue;
+    justify-content: center; 
+  }
+  
+  .news-card-for-featuredLN {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* fixed width */
+    height: 220px; /* height is auto to fit content */
+    margin-left: 75px;
+    object-fit: cover;
+    margin-top: 100px;
+  }
+  
+  .news-imageLN {
+    width: 300px;
+    height: 180px; /* fixed height for images */
+    object-fit: cover;
+  }
+  
+  .news-contentLN {
+    padding: 15px;
+    width: 100%; /* ensure content container fits card width */
+  }
+  
+  .news-titleLN {
+    font-size: 12px;
+   margin-left: 80px;
+   margin-top: 0px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2; /* Adjust line height for better readability */
+    max-height: 3.6em;
+    text-overflow: ellipsis;
+    
+    text-align: left;
+  }
+  
+  .news-descriptionLN {
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* limit to 3 lines */
+  }
+  
+  .news-metaLN {
+    font-size: 12px;
+    color: #333;
+    margin-top: -15px; /* space above the meta info */
+    width: 100%; /* ensure meta info container fits card width */
+    display: block;
+    justify-content: space-around; /* space out meta info items */
+    align-items: center;
+    text-align: center;
+    gap: 10px; 
+    padding: 0 10px;
+  }
+  
+  /* ... Media queries remain unchanged */
+  .news-infoLN {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    padding: 0 10px; /* Add padding on the sides if needed */
+    
+}
+
+.news-likesLN{
+  margin-right: 40px;
+ 
+}
+  
+.news-viewsLN{
+  margin-right: 30px;
+}
+
+

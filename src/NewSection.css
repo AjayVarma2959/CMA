@@ -1,0 +1,55 @@
+/* NewsSection.css */
+
+.news-section {
+    margin-top: 30px;
+    
+    padding: 20px;
+   margin-right: 10px;
+    text-align: right;
+  }
+  
+  h2 {
+
+
+    font-family: "Open Sans" ;
+    
+    font-size: 66px;
+    
+  }
+  
+  h3 {
+    font-size: 34px;
+    font-family: "Open Sans" ;
+   margin-right: 12px;
+    margin-top: -60px;
+  }
+  
+  .p1 {
+    font-family: "Open Sans" ;
+    font-size: 24px;
+    margin-right: 0px;
+    margin-top: -32px;
+  }
+
+  .p2{
+    font-family: "Open Sans" ;
+  
+    font-size: 24px;
+    margin-right: 0px;
+    margin-top: -24px;
+
+  }
+  
+  .upload-button {
+    background-color:rgb(79, 146, 197);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-right: 132px;
+  }
+  
+  

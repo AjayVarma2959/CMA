@@ -1,0 +1,84 @@
+/* News.css */
+
+/* Styles for the main container */
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the section headers */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style for the Owl Carousel */
+.owl-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hides scrollbars on Firefox */
+  -ms-overflow-style: none; /* Hides scrollbars on IE/Edge */
+  
+}
+
+/* Style for individual video cards within the carousel */
+.owl-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.owl-item:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the responsive navigation arrows in the carousel */
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.owl-prev,
+.owl-next {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Style for the PhotoSlider component */
+.photo-slider-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.photo-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-slider img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional styles can be added as needed for your specific design. */

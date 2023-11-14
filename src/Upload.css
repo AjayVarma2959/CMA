@@ -1,0 +1,12 @@
+.center{
+    align-items: center;
+    position:absolute;
+    left:35%;
+    font-family: cursive;
+   
+    padding: 30px 500px;
+}
+.butt{
+    padding: 10px;
+    font-family: cursive;
+}

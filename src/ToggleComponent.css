@@ -1,0 +1,76 @@
+.component-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-container {
+  display: flex;
+  border: 2px solid #4c8eaf;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 600px;
+  margin-left: 480px;
+  margin-top: 40px;
+  z-index: 1;
+}
+
+.toggle-button {
+  flex: 1;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #25bbd9;
+  color: white;
+}
+
+.options-container1 {
+  display: flex;
+  justify-content: center;
+  position: absolute; /* Change to absolute positioning */
+  top: 100%; /* Position it right below the toggle container */
+  left: 57%;
+  transform: translateX(-50%); /* Center it horizontally */
+  width: calc(100% - 40px); /* Adjust width as needed */
+  box-sizing: border-box;
+  z-index: 0; /* Lower z-index so it doesn't overlap elements above if not needed */
+  
+}
+
+
+.options-container2 {
+  display: flex;
+  justify-content: center;
+  position: absolute; /* Change to absolute positioning */
+  top: 100%; /* Position it right below the toggle container */
+  left: 75%;
+  transform: translateX(-50%); /* Center it horizontally */
+  width: calc(100% - 40px); /* Adjust width as needed */
+  box-sizing: border-box;
+  z-index: 0; /* Lower z-index so it doesn't overlap elements above if not needed */
+  
+}
+
+.option-button {
+  width: 80px;
+  margin: 0 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: #25bbd9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Make the option buttons look like tabs */
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+  
+}
+
+.option-button:hover {
+  background-color: #20bacb;
+}

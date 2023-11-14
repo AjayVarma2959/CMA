@@ -11,15 +11,10 @@ import VideoGrid from './VideoGrid';
 // import Footer from './Footer';
 import ConcernSection from './ConcernSection';
 import Navbar from './Navbar';
-import Login from './Login';
-import Signup from './Signup';
+
 import Concern from './Concern';
 import News from './News';
 import UploadFiles from './UploadFiles';
-// import Home from './Home';
-import FeaturedConcernCategory from './FeaturedConcernCategory';
-import TrendingConcernCategory from './TrendingConcernCategory';
-import LikedConcernCategory from './LikedConcernCategory';
 
 
 
@@ -27,9 +22,9 @@ import LikedConcernCategory from './LikedConcernCategory';
 
 
 
-
-function App() {
+function Home() {
   
+
   const [videoUrls, setVideoUrls] = useState([]);
   const [mediaDescription, setMediaDescription] = useState([]);
   const [ setCurrentVideoIndex] = useState(0);
@@ -79,8 +74,7 @@ function App() {
     
     <Routes>
       
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Signup" element={<Signup />} />
+      
       <Route path="/concern" element={<Concern />} />
       <Route path="/News" element={<News />} />
       
@@ -88,12 +82,8 @@ function App() {
       <Route path="/trending" element={<TrendingCategory />} />
       <Route path="/liked" element={<LikedCategory />} />
       <Route path="/uploadfiles" element={<UploadFiles/>} />
-      <Route path="/featuredconcern" element={<FeaturedConcernCategory/>} />
-      <Route path="/trendingconcern" element={<TrendingConcernCategory/>} />
-      <Route path="/likedconcern" element={<LikedConcernCategory/>} />
-
-
-      {/* <Route path="/home" element={<Home/>} /> */}
+      
+     
 
       
       <Route path="/" element={
@@ -101,7 +91,7 @@ function App() {
         
 
           <Navbar />
-          <PhotoSlider videoUrls={videoUrls} mediaDescription={mediaDescription}/>
+          <PhotoSlider videoUrls={videoUrls}  mediaDescription={mediaDescription} />
           
           <NavbarC />
           <NewSection />
@@ -122,4 +112,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

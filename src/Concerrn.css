@@ -1,0 +1,152 @@
+/* News.css */
+
+/* Style the video container */
+.video-card {
+  margin: 0;
+  padding: 0;
+    width: 320px; 
+    height: 200px; 
+    margin: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  @media (min-width: 768px) {
+    .owl-carousel {
+      justify-content:start;
+    }
+  }
+  
+  .video-card iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  /* Style the carousel container */
+  .owl-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* This will space out your video cards evenly */
+    padding: 25px; /* This padding replaces the margin on video-card for spacing */
+    gap: 10px; /* This adds spacing between items */
+  }
+  
+  .video-carousel-containerConcern {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   color: rgb(7, 80, 105);
+  }
+  
+  .h1v {
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-bottom: 10px;
+    color: #3c11ea; /* Set the desired text color */
+  }
+  
+  /* Add these styles to your VideoCarousel.css file */
+
+/* Custom styles for the "Prev" and "Next" buttons */
+.prev-buttonConcern,
+.next-buttonConcern {
+  margin-top: 30px;
+  
+  justify-content: space-between;
+  background-color: #333; /* Background color for the buttons */
+  color: #fff; /* Text color for the buttons */
+  font-size: 24px; /* Font size */
+  border: none; /* Remove the button border */
+  padding: 10px 20px; /* Padding inside the buttons */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  border-radius: 50%; /* Make the buttons circular */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Style for the "Prev" button on hover */
+.prev-buttonConcern:hover {
+  background-color: #555; /* Darker background color on hover */
+}
+
+/* Style for the "Next" button on hover */
+.next-buttonConcern:hover {
+  background-color: #555; /* Darker background color on hover */
+}
+
+/* VideoCarousel.css */
+.see-more-button1Concern {
+  position: absolute;
+  margin-top: 25px; /* Adjust the top positioning as needed */
+  margin-left: 1360px; /* Adjust the right positioning as needed */
+  background-color: #f44336; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 5px 10px; /* Padding around the button text */
+  border: none;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+
+
+
+.see-more-button2Concern {
+  position: absolute;
+  margin-top: 25px; /* Adjust the top positioning as needed */
+  margin-left: 1360px; /* Adjust the right positioning as needed */
+  background-color: #f44336; /* Button background color */
+  color: #fff; /* Button  text color */
+  padding: 5px 10px; /* Padding around the button text */
+  border: none;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+
+
+
+.see-more-button3Concern {
+  position: absolute;
+  margin-top: 25px; /* Adjust the top positioning as needed */
+  margin-left: 1360px; /* Adjust the right positioning as needed */
+  background-color: #f44336; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 5px 10px; /* Padding around the button text */
+  border: none;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+
+.video-item-infoforFN {
+  display: flex;
+  justify-content: center; /* This will put space between the items */
+  gap: 40px;
+  width: 100%; /* Ensure the div takes the full width */
+  margin-top: 3px; /* Spacing between video and info below */
+  
+  
+}
+
+.video-item-infoforTN {
+  display: flex;
+  justify-content: center; /* This will put space between the items */
+  gap: 40px;
+  width: 100%; /* Ensure the div takes the full width */
+  margin-top: 3px; /* Spacing between video and info below */
+  
+  
+}
+
+
+.video-item-infoforLN {
+  display: flex;
+  justify-content: center; /* This will put space between the items */
+  gap: 40px;
+  width: 100%; /* Ensure the div takes the full width */
+  margin-top: 3px; /* Spacing between video and info below */
+  
+  
+}
+

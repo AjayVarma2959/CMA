@@ -1,0 +1,54 @@
+.video-gridforF {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
+    gap: 20px; /* Adjust the gap to your preference */
+    padding: 20px; /* Add some padding around the grid */
+    background-color: lightblue;
+  }
+  
+  .video-itemforF {
+    display: flex;
+    flex-direction: column; /* Stack video player and info vertically */
+    align-items: center; /* Center-align the items for aesthetics */
+    width: 100%; /* Ensure the video item takes up the full width */
+    margin-top: 50px;
+  }
+  
+  /* Adjust this selector to match the actual class or override the styles directly if needed */
+  .react-playerforF {
+    width: 100% !important; /* Makes the player responsive to the container size */
+    height: 100% !important; /* Adjust height automatically */
+  }
+  
+  .video-item-infoforF {
+    display: flex;
+    justify-content: center; /* This will put space between the items */
+    gap: 40px;
+    width: 100%; /* Ensure the div takes the full width */
+    margin-top: 10px; /* Spacing between video and info below */
+    
+  }
+
+
+  .video-title {
+    font-size: 1rem;
+    margin-top: 5px; /* Space above the title */
+    margin-bottom: 10px; /* Space below the title */
+  }
+  
+  
+  
+  
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+  }
+  
