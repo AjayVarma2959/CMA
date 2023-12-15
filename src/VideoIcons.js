@@ -1,8 +1,7 @@
 import React from "react";
 import "./VideoIcons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types"; // Import PropTypes
-
+import PropTypes from "prop-types"; 
 import {
   
   faThumbsUp,
@@ -42,7 +41,7 @@ function VideoIcons({ visible }) {
   );
 }
 VideoIcons.propTypes = {
-  visible: PropTypes.bool.isRequired, // Ensure 'visible' is a required boolean prop
+  visible: PropTypes.bool.isRequired, 
 };
 
 export default VideoIcons;

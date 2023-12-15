@@ -16,12 +16,11 @@
       color:white;
     }
     
-    /* Navbar.css */
-  /* ... (previous styles) ... */
+    
   
   .search-bar {
       padding: 10px;
-      border-radius: 10px; /* Add border radius */
+      border-radius: 10px; 
       
       
       
@@ -30,29 +29,29 @@
   
     
     .search-bar input[type="text"] {
-      padding: 15px; /* Increase padding for text input */
+      padding: 15px; 
       border: none;
-      border-radius: 10px; /* Add border radius */
+      border-radius: 10px; 
      
       
      
     }
     
     .search-bar input[type="text"]:focus {
-      outline: none; /* Remove the default focus outline */
+      outline: none; 
       box-shadow: 0 0 5px dark rgb(79, 197, 128); 
-      /* Add a subtle box shadow on focus */
+      
       
     }
     .search-bar button {
-      margin-left: 30px; /* Adjust the margin as needed */
+      margin-left: 30px; 
       padding: 5px;
       margin-top: 2px;
       padding-bottom: 10px;
       width: 100px;
     }
     
-    /* ... (remaining styles) ... */
+    
     
     
     input[type="text"] {
@@ -67,7 +66,7 @@
     .nav-links {
       
       display: flex;
-      gap: 10px; /* Define the constant gap between navbar items */
+      gap: 10px; 
     }
     
     .nav-links a {
@@ -77,23 +76,23 @@
       text-decoration: none;
       display: flex;
       justify-content: space-evenly;
-      align-items: center; /* Vertically center the text and the button-like border */
+      align-items: center; 
       color:white;
       padding: 5px 10px;
-      border: 2px solid transparent; /* Initially transparent border */
+      border: 2px solid transparent; 
       border-radius: 10px;
       border: 2px solid black;
     }
 
-    /* Add this to your Navbar.css */
+    
 .fileuploadh1 {
-  font-size: 34px;  /* or any size you prefer */
+  font-size: 34px;  
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #000;  /* or any color you prefer */
+  color: #000;  
   margin-left: 120px;
  
-  margin-top: -43px;  /* add some margin to the top */
-  /* Add any other styles you want for the h1 here */
+  margin-top: -43px;  
+  
 }
 
 .uploadcolor{
@@ -102,14 +101,14 @@
 
 .form-container {
   margin-top: 80px;
-  display: flex; /* Display form fields in a row */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 20px; /* Add some gap between form fields */
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
   width: 1500px;
 }
 
 .form-field {
-  flex: 1; /* Equal width for all form fields */
+  flex: 1; 
   
 }
 
@@ -126,54 +125,61 @@
   margin-left: 30px;
   width: 300px;
   padding: 10px;
-  border: 2px solid #000; /* Dashed border */
+  border: 2px solid #000; 
   border-radius: 10px;
   font-size: 18px;
 }
 
 
-/* Add this to your Navbar.css */
 
-/* ... (previous styles) ... */
+
+.drag-and-drop-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 200px; 
+  flex-wrap: wrap; 
+  margin-bottom: 20px; 
+}
+
 
 .drag-and-drop-box {
-  display: inline-block; /* Change to inline-block to make them appear side by side */
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
   border: 2px dotted #000;
-  border-radius: none;
   padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 200px; /* Adjust margin as needed */
-  width: 400px; /* Adjust width as needed */
-  height: 200px;
+  min-height: 250px; 
+  width: 500px; 
+  max-width: 100%; 
+  box-sizing: border-box; 
+  margin-top: 50px;
 }
+
 
 .drag-and-drop-box p {
-
-  font-size: 18px;
-  align-items: center;
-  margin-top: 80px;
+  text-align: center;
+  word-wrap: break-word; 
 }
 
-/* Add any other styles you want for the drag-and-drop boxes here */
 
-/* Inside UploadFiles.css */
+
+
 
 .upload-button-for-files {
-  background-color: rgb(79, 146, 197); /* Change the background color as needed */
-  color: #fff; /* Text color */
-  border: none;
+  background-color: rgb(79, 146, 197); 
+  color: #fff; 
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 24px;
-  margin-left: 680px;
+  margin-left: 700px;
   margin-top: 40px;
   
 }
 
 .upload-button-for-files:hover {
-  background-color: #0056b3; /* Change the hover background color as needed */
+  background-color: #0056b3; 
 }
 

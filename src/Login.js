@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import './Login.css'; // Import your CSS for styling
+import './Login.css'; 
 import cmalogo from "./Cma.png";
 import PropTypes from 'prop-types';
 
@@ -19,11 +19,11 @@ const Login = ({ toggleForm }) => {
 
 
   const handleGetOtp = () => {
-    const otp = Math.floor(100000 + Math.random() * 900000).toString(); // Generate a 6-digit OTP
-    sessionStorage.setItem('otp', otp); // Store the OTP in session storage
-    setSnackbarMessage(`Your OTP is: ${otp}`); // Set the message with the generated OTP
-    setSnackbarSeverity('info'); // Set the severity for informational message
-    setSnackbarOpen(true); // Show the snackbar
+    const otp = Math.floor(100000 + Math.random() * 900000).toString(); 
+    sessionStorage.setItem('otp', otp); 
+    setSnackbarMessage(`Your OTP is: ${otp}`); 
+    setSnackbarSeverity('info'); 
+    setSnackbarOpen(true); 
   };
 
   const handleLogin = () => {
@@ -31,13 +31,13 @@ const Login = ({ toggleForm }) => {
     const registeredMobile = sessionStorage.getItem('registeredMobile');
   
     if (otp === storedOtp && mobileNumber === registeredMobile) {
-      // Correct OTP and mobile number
+      
       setSnackbarMessage('Login successful! Redirecting to home page...');
       setSnackbarSeverity('success');
       setSnackbarOpen(true);
-      setTimeout(() => navigate('/home'), 3000); // Redirect after a short delay
+      setTimeout(() => navigate('/home'), 3000); 
     } else {
-      // Incorrect OTP or mobile number
+      
       setSnackbarMessage('Invalid OTP or mobile number. Please try again.');
       setSnackbarSeverity('error');
       setSnackbarOpen(true);
@@ -64,10 +64,10 @@ const Login = ({ toggleForm }) => {
             style={{ width: '300px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px', marginLeft: '220px' }}
           />
           
-          {/* Simulating an OTP retrieval process */}
+          
           <button
   type="button"
-  onClick={handleGetOtp} // Call the handleGetOtp function here
+  onClick={handleGetOtp} 
   style={{ ...buttonStyle, marginTop: '10px' }}
 >
   Get OTP
@@ -106,7 +106,7 @@ const Login = ({ toggleForm }) => {
         />
       </div>
 
-      {/* Snackbar for displaying messages */}
+      
       <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleCloseSnackbar}>
         <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
           {snackbarMessage}

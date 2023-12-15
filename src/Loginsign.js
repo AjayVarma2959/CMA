@@ -10,12 +10,12 @@ const Loginsign = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLogin = () => {
-    // Implement your login logic here
+   
     console.log('Logging in with username:', loginUsername);
   };
 
   const handleSignup = () => {
-    // Implement your signup logic here
+    
     console.log('Signing up with username:', signupUsername);
   };
 

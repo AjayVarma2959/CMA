@@ -121,7 +121,7 @@ const VideosForLiked = () => {
                     onMouseLeave={handleMouseLeave}>
                        
                         <ReactPlayer
-                            url={video.media_url} // Adjusted to use the correct property from the API
+                            url={video.media_url} 
                             width="100%"
                             height="100%"
                             controls={true}
@@ -142,7 +142,7 @@ const VideosForLiked = () => {
   </div>
 ))}
             </InfiniteScroll>
-            {/* Styles omitted for brevity */}
+            
         </>
     );
 };

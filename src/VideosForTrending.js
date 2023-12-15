@@ -56,7 +56,7 @@ const VideosForTrending = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // Include other headers if needed, like authorization tokens
+                
             },
             body: JSON.stringify({
                 category: "Trending",
@@ -64,7 +64,7 @@ const VideosForTrending = () => {
                 'size': 100,
                 'tags': 'all',
                 'searchTerm': 'political',
-                // Include any other body data required by the API
+                
             })
         };
 
@@ -75,10 +75,10 @@ const VideosForTrending = () => {
             }
             const data = await response.json();
             console.log('API Response:', data.result);
-            return data.result; // Make sure this aligns with your actual data structure
+            return data.result; 
         } catch (error) {
             console.error('Fetching trending videos failed:', error);
-            // Handle error as needed
+            
         }
     }
 
@@ -121,7 +121,7 @@ const VideosForTrending = () => {
              onMouseLeave={handleMouseLeave}>
                          
                         <ReactPlayer
-                            url={video.media_url} // Adjusted to use the correct property from the API
+                            url={video.media_url} 
                             width="100%"
                             height="100%"
                             controls={true}
@@ -143,7 +143,7 @@ const VideosForTrending = () => {
   </div>
 ))}
             </InfiniteScroll>
-            {/* Styles omitted for brevity */}
+            
         </>
     );
 };

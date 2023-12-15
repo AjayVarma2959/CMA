@@ -1,13 +1,13 @@
 /* PhotoSlider.css */
 
-/* Container for the entire photo slider */
+
 .photo-slider {
-  width: 100%; /* Set the maximum width to 50% of the screen width */
-  height: 60vh; /* Set the height to 80% of the viewport height */
+  width: 100%; 
+  height: 60vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide overflow to prevent horizontal scrolling */
+  overflow: hidden; 
   position: relative;
   background-color: black;
   
@@ -18,17 +18,32 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  flex-grow: 1;
   
+}
+
+
+.media-info {
+  flex-basis: 20%; 
+  padding: 10px; 
+  color: white; 
+  
+  height: 100%; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  margin-right: 50px;
 }
 
 
 
 
 
-/* Slider controls container */
+
 .slider-controls {
   position: absolute;
-  top: 50%; /* Vertically center the controls */
+  top: 50%; 
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
@@ -36,37 +51,42 @@
   width: 100%;
 }
 
-/* Slider control buttons */
+
 .slide-button {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
-  color: #fff; /* Text color */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff; 
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  outline: none; /* Remove default button focus outline */
+  outline: none; 
   font-family: cursive;
   border-radius: 50%;
   font-size: 64px;
-  margin: 0 10px; /* Add some space between buttons */
+  margin: 0 10px; 
   transition: background-color 0.3s ease;
 }
 
-/* Styles for the "Previous" button */
+
 .slide-button:first-child {
   border-radius: 50%;
 }
 
-/* Styles for the "Next" button */
+
 .slide-button:last-child {
   border-radius: 50%;
 }
 
-/* Styles for the "Previous" button on hover */
+
 .slide-button:first-child:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Styles for the "Next" button on hover */
+
 .slide-button:last-child:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.media-title{
+  margin-right: 50px;
 }

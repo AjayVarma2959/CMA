@@ -24,10 +24,13 @@ function News(){
           const mediaData = data.result;
 
           if (Array.isArray(mediaData)) {
-            const urls = mediaData.map((item) => item.media_data);
-            const description = mediaData.map((item) => item.media_description);
+            const urls = mediaData.map(item => item.media_data);
+            const descriptions = mediaData.map(item => ({
+              media_title: item.media_title,
+              media_description: item.media_description
+            }));
             setVideoUrls(urls);
-            setMediaDescription(description);
+            setMediaDescription(descriptions);
           } else {
             console.error('API response is not in the expected format.');
           }
@@ -43,7 +46,7 @@ function News(){
   }, []);
 
   useEffect(() => {
-    // Automatically play the next video when the current one ends
+    
     if (playerRef.current) {
       playerRef.current.getInternalPlayer().addEventListener('ended', () => {
         setCurrentVideoIndex((prevIndex) =>

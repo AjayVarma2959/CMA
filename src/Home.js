@@ -1,5 +1,5 @@
 import React, { useState, useEffect , useRef} from 'react';
-import {   Route, Routes } from 'react-router-dom';// Import Routes and Route from 'react-router-dom'
+import {   Route, Routes } from 'react-router-dom';
 import PhotoSlider from './PhotoSlider';
 import FeaturedCategory from './FeaturedCategory';
 import TrendingCategory from './TrendingCategory';
@@ -58,7 +58,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    // Automatically play the next video when the current one ends
+    
     if (playerRef.current) {
       playerRef.current.getInternalPlayer().addEventListener('ended', () => {
         setCurrentVideoIndex((prevIndex) =>

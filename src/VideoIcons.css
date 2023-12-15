@@ -4,20 +4,20 @@
   opacity: 0;
 }
 
-/* Active state (when the component is entering) */
+
 .video-icons-enter-active {
   top: 120px;
   opacity: 2;
   transition: transform 1100ms, opacity 1100ms;
 }
 
-/* Exiting state (when the component is leaving) */
+
 .video-icons-exit {
   top: 120px;
   opacity: 1;
 }
 
-/* Active state (when the component is exiting) */
+
 .video-icons-exit-active {
   top: 60px;
   opacity: 0;

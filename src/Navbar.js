@@ -5,7 +5,7 @@ import {Link, useNavigate } from 'react-router-dom';
 import cmalogo from "./Cma.png"
 
 function Navbar() {
-  // Initialize the navigate function
+ 
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -26,7 +26,7 @@ function Navbar() {
           <button className='b1' type="submit">Search</button>
         </div>
         <div className="nav-links">
-        <Link to="/">Home</Link> {/* Use Link for client-side navigation */}
+        <Link to="/">Home</Link> 
           <Link to="/news">News</Link>
           <Link to="/concern">Concern</Link>
           

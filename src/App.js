@@ -1,5 +1,5 @@
 import React, { useState, useEffect , useRef} from 'react';
-import {   Route, Routes } from 'react-router-dom';// Import Routes and Route from 'react-router-dom'
+import {   Route, Routes } from 'react-router-dom';
 import PhotoSlider from './PhotoSlider';
 import FeaturedCategory from './FeaturedCategory';
 import TrendingCategory from './TrendingCategory';
@@ -20,6 +20,8 @@ import UploadFiles from './UploadFiles';
 import FeaturedConcernCategory from './FeaturedConcernCategory';
 import TrendingConcernCategory from './TrendingConcernCategory';
 import LikedConcernCategory from './LikedConcernCategory';
+import FullNewsCard from './FullNewsCard';
+
 
 
 
@@ -32,6 +34,7 @@ function App() {
   
   const [videoUrls, setVideoUrls] = useState([]);
   const [mediaDescription, setMediaDescription] = useState([]);
+  
   const [ setCurrentVideoIndex] = useState(0);
   const playerRef = useRef(null);
 
@@ -44,10 +47,13 @@ function App() {
           const mediaData = data.result;
 
           if (Array.isArray(mediaData)) {
-            const urls = mediaData.map((item) => item.media_data);
-            const description = mediaData.map((item) => item.media_description);
+            const urls = mediaData.map(item => item.media_data);
+            const descriptions = mediaData.map(item => ({
+              media_title: item.media_title,
+              media_description: item.media_description
+            }));
             setVideoUrls(urls);
-            setMediaDescription(description);
+            setMediaDescription(descriptions);
           } else {
             console.error('API response is not in the expected format.');
           }
@@ -63,7 +69,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Automatically play the next video when the current one ends
+    
     if (playerRef.current) {
       playerRef.current.getInternalPlayer().addEventListener('ended', () => {
         setCurrentVideoIndex((prevIndex) =>
@@ -83,7 +89,8 @@ function App() {
       <Route path="/Signup" element={<Signup />} />
       <Route path="/concern" element={<Concern />} />
       <Route path="/News" element={<News />} />
-      
+       {/* <Route path="/" element={<ConcernSection />} /> */}
+        <Route path="/news/:id" element={<FullNewsCard />} /> 
       <Route path="/featured" element={<FeaturedCategory />} />
       <Route path="/trending" element={<TrendingCategory />} />
       <Route path="/liked" element={<LikedCategory />} />
@@ -101,7 +108,7 @@ function App() {
         
 
           <Navbar />
-          <PhotoSlider videoUrls={videoUrls} mediaDescription={mediaDescription}/>
+          <PhotoSlider videoUrls={videoUrls} mediaDescription={mediaDescription} />
           
           <NavbarC />
           <NewSection />

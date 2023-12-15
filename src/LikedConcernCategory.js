@@ -40,7 +40,7 @@ function LikedConcernCategory() {
   }, []);
 
   useEffect(() => {
-    // Automatically play the next video when the current one ends
+    
     if (playerRef.current) {
       playerRef.current.getInternalPlayer().addEventListener('ended', () => {
         setCurrentVideoIndex((prevIndex) =>

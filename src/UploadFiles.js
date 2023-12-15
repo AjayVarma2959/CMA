@@ -9,47 +9,63 @@ function UploadFiles() {
   const mediaDropZoneRef = useRef(null);
   const thumbnailDropZoneRef = useRef(null);
 
-  let mediaFile = null;
-  let thumbnailFile = null;
+  const [mediaFile, setMediaFile] = useState(null);
+  const [thumbnailFile, setThumbnailFile] = useState(null);
+
+  const [selectedCategory, setSelectedCategory] = useState('News');
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleToggleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setSelectedOption(''); 
+  };
+
+  const handleToggleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
 
   const handleMediaDrop = (e) => {
     e.preventDefault();
+    e.stopPropagation(); 
     const files = e.dataTransfer.files;
-    // Handle media file upload logic here
-    console.log('Media files dropped:', files);
+    if (files && files.length > 0) {
+      setMediaFile(files[0]); 
+      console.log('Media files dropped:', files[0].name);
+    }
   };
 
   const handleThumbnailDrop = (e) => {
     e.preventDefault();
+    e.stopPropagation(); 
     const files = e.dataTransfer.files;
-    // Handle thumbnail file upload logic here
-    console.log('Thumbnail files dropped:', files);
+    if (files && files.length > 0) {
+      setThumbnailFile(files[0]); 
+      console.log('Thumbnail files dropped:', files[0].name);
+    }
   };
 
   const handleMediaClick = () => {
-    // Trigger a click on the media input element
-    if (mediaDropZoneRef.current) {
-      mediaDropZoneRef.current.click();
-    }
+    mediaDropZoneRef.current?.click();
   };
 
   const handleThumbnailClick = () => {
-    // Trigger a click on the thumbnail input element
-    if (thumbnailDropZoneRef.current) {
-      thumbnailDropZoneRef.current.click();
-    }
+    thumbnailDropZoneRef.current?.click();
   };
 
   const handleMediaUpload = (e) => {
     const files = e.target.files;
-    // Handle media file upload logic here
-    console.log('Media files selected:', files);
+    if (files && files.length > 0) {
+      setMediaFile(files[0]); 
+      console.log('Media files selected:', files[0].name);
+    }
   };
 
   const handleThumbnailUpload = (e) => {
     const files = e.target.files;
-    // Handle thumbnail file upload logic here
-    console.log('Thumbnail files selected:', files);
+    if (files && files.length > 0) {
+      setThumbnailFile(files[0]); 
+      console.log('Thumbnail files selected:', files[0].name);
+    }
   };
 
   const [states, setStates] = useState([]);
@@ -169,36 +185,7 @@ function UploadFiles() {
     fetchVillagesByMandal(mandalId);
   };
 
-  const handleSubmit = () => {
-    // Collect the form data and other selected values
-    const formData = {
-      title: document.querySelector('input[type="text"][placeholder="Enter title"]').value,
-      category: document.querySelector('select').value,
-      description: document.querySelector('input[type="text"][placeholder="Enter description"]').value,
-      tag: document.querySelector('input[type="text"][placeholder="Enter tag"]').value,
-      state: selectedState,
-      district: selectedDistrict,
-      mandal: selectedMandal,
-      village: selectedVillage,
-    };
-
-    // Create a FormData object to handle file uploads
-    const formDataWithFiles = new FormData();
-    formDataWithFiles.append('media', mediaFile); // Replace 'mediaFile' with your media file input
-    formDataWithFiles.append('thumbnail', thumbnailFile); // Replace 'thumbnailFile' with your thumbnail file input
-
-    // Append form data to the FormData object
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataWithFiles.append(key, value);
-    });
-
-    // Perform any further actions, such as sending the data to your server
-    console.log('Form data to be submitted:', formData);
-    console.log('Media file:', mediaFile);
-    console.log('Thumbnail file:', thumbnailFile);
-
-    // Send 'formDataWithFiles' to your server using fetch or any other method
-  };
+ 
 
 
 
@@ -231,6 +218,64 @@ function UploadFiles() {
     border: '2px solid',
   };
 
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData();
+    formData.append('title', document.querySelector('input[type="text"][placeholder="Enter title"]').value);
+    formData.append('category', document.querySelector('select').value);
+    formData.append('description', document.querySelector('input[type="text"][placeholder="Enter description"]').value);
+    formData.append('tag', document.querySelector('input[type="text"][placeholder="Enter tag"]').value);
+    formData.append('state', selectedState);
+    formData.append('district', selectedDistrict);
+    formData.append('mandal', selectedMandal);
+    formData.append('village', selectedVillage);
+    formData.append('category', selectedCategory);
+    formData.append('option', selectedOption);
+
+    if (mediaFile) {
+      formData.append('media', mediaFile);
+    }
+    if (thumbnailFile) {
+      formData.append('thumbnail', thumbnailFile);
+    }
+
+  
+    
+    const apiEndpoint = 'https://api.cma.finstrokes.in/user_media/insertMedia';
+  
+    try {
+     
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        body: formData,
+        
+      });
+  
+      
+      if (response.ok) {
+        const responseData = await response.json();
+        if (responseData.status === 'SUCCESS') {
+          console.log('File uploaded successfully:', responseData);
+          
+        } else {
+          console.error('Failed to upload file:', responseData.message);
+          
+        }
+      } else {
+        console.error('Failed to upload file. Server responded with status:', response.status);
+        
+      }
+    } catch (error) {
+      console.error('An error occurred while uploading the file:', error);
+      
+    }
+  };
+  
+
+
+  
   return (
     <>
       <nav className="navbar">
@@ -246,13 +291,16 @@ function UploadFiles() {
           <button className='b1' type="submit">Search</button>
         </div>
         <div className="nav-links">
-          <Link to="/">Home</Link> {/* Use Link for client-side navigation */}
+          <Link to="/">Home</Link> 
           <Link to="/news">News</Link>
           <Link to="/concern">Concern</Link>
         </div>
       </nav>
 
-      {<ToggleComponent />}
+      <ToggleComponent 
+        onCategoryChange={handleToggleCategoryChange}
+        onOptionSelect={handleToggleOptionChange}
+      />
       <div className='fileupload'>
         <h1 className='fileuploadh1'>What would you like to <span className='uploadcolor'>Upload</span> </h1>
       </div>
@@ -348,39 +396,46 @@ function UploadFiles() {
           </select>
         </div>
       </nav>
-      <div className='drag-and-drop-container'>
-        <div
-          className='drag-and-drop-box'
-          onDrop={handleMediaDrop}
-          onDragOver={(e) => e.preventDefault()}
-          onClick={handleMediaClick}
-        >
-          <p>Drag and drop media files here or click to open</p>
-          <input
-            type="file"
-            accept="image/*, video/*"
-            style={{ display: 'none' }}
-            ref={mediaDropZoneRef}
-            onChange={handleMediaUpload}
-          />
-        </div>
 
-        <div
-          className='drag-and-drop-box'
-          onDrop={handleThumbnailDrop}
-          onDragOver={(e) => e.preventDefault()}
-          onClick={handleThumbnailClick}
-        >
-          <p>Drag and drop thumbnails here or click to open</p>
-          <input
-            type="file"
-            accept="image/*"
-            style={{ display: 'none' }}
-            ref={thumbnailDropZoneRef}
-            onChange={handleThumbnailUpload}
-          />
-        </div>
-      </div>
+
+
+
+
+      <div className='drag-and-drop-container'>
+  <div
+    className='drag-and-drop-box'
+    onDrop={handleMediaDrop}
+    onDragOver={(e) => e.preventDefault()}
+    onClick={handleMediaClick}
+  >
+    <p>Drag and drop media files here, or click to select files</p>
+    {mediaFile && <p>Selected file: {mediaFile.name}</p>}
+    <input
+      type="file"
+      accept="image/*, video/*"
+      style={{ display: 'none' }}
+      ref={mediaDropZoneRef}
+      onChange={handleMediaUpload}
+    />
+  </div>
+
+  <div
+    className='drag-and-drop-box'
+    onDrop={handleThumbnailDrop}
+    onDragOver={(e) => e.preventDefault()}
+    onClick={handleThumbnailClick}
+  >
+    <p>Drag and drop thumbnail here, or click to select files</p>
+    {thumbnailFile && <p>Selected file: {thumbnailFile.name}</p>}
+    <input
+      type="file"
+      accept="image/*"
+      style={{ display: 'none' }}
+      ref={thumbnailDropZoneRef}
+      onChange={handleThumbnailUpload}
+    />
+  </div>
+</div>
       <div className='form-field'>
   <button className='upload-button-for-files' onClick={handleSubmit}>
     Upload

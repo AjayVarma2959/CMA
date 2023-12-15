@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Signupp.css'; // Import your CSS file for styling
+import './Signupp.css'; 
 
 const Signupp = () => {
   const [loginUsername, setLoginUsername] = useState('');
@@ -11,12 +11,12 @@ const Signupp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLogin = () => {
-    // Implement your login logic here
+    
     console.log('Logging in with username:', loginUsername);
   };
 
   const handleSignup = () => {
-    // Implement your signup logic here
+    
     console.log('Signing up with username:', signupUsername);
   };
 

@@ -1,13 +1,14 @@
 import React, { useState, useEffect , useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types'; 
 import Navbar from './Navbar';
 import PhotoSlider from './PhotoSlider';
 import NavbarC from './NavbarC';
-import './Concerrn.css'; // Import your CSS for styling
-import OwlCarousel from 'react-owl-carousel2'; // Import OwlCarousel
+import './Concerrn.css'; 
+import OwlCarousel from 'react-owl-carousel2'; 
 import 'react-owl-carousel2/src/owl.carousel.css';
 import 'react-owl-carousel2/src/owl.theme.default.css';
+import defaultImage from './photos/CMA.png';
 
 
 
@@ -45,7 +46,7 @@ function timeAgo(dateParam) {
 
 
 
-const NewsCard = ({ Media }) => {
+const NewsCard = ({ Media}) => {
     const [showDescription, setShowDescription] = useState(false);
     
     const toggleDescription = () => {
@@ -63,7 +64,11 @@ const NewsCard = ({ Media }) => {
                 
             >
                 
-                <img src={Media.thumbnail} alt={Media.media_title} className="news-imageFN" />
+                <img 
+                  src={Media.thumbnail || defaultImage} 
+                  alt={Media.media_title || 'Default image'} 
+                  className="news-imageFN" 
+                />
                 {showDescription && (
                     <div className="news-contentFN">
                         <p className="news-descriptionFN">{Media.media_description}</p>
@@ -113,10 +118,13 @@ function Concern() {
           const mediaData = data.result;
 
           if (Array.isArray(mediaData)) {
-            const urls = mediaData.map((item) => item.media_data);
-            const description = mediaData.map((item) => item.media_description);
+            const urls = mediaData.map(item => item.media_data);
+            const descriptions = mediaData.map(item => ({
+              media_title: item.media_title,
+              media_description: item.media_description
+            }));
             setVideoUrls(urls);
-            setMediaDescription(description);
+            setMediaDescription(descriptions);
           } else {
             console.error('API response is not in the expected format.');
           }
@@ -132,7 +140,7 @@ function Concern() {
   }, []);
 
   useEffect(() => {
-    // Automatically play the next video when the current one ends
+    
     if (playerRef.current) {
       playerRef.current.getInternalPlayer().addEventListener('ended', () => {
         setCurrentVideoIndex((prevIndex) =>
@@ -155,14 +163,14 @@ function Concern() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Include other headers if needed, like authorization tokens
+            
         },
         body: JSON.stringify({
             category: "Featured",
             'page': 1,
             'size': 1000,
             
-            // Include any other body data required by the API
+            
         })
     };
 
@@ -173,10 +181,10 @@ function Concern() {
         }
         const data = await response.json();
         console.log('API Response:', data.result);
-        return data.result; // Make sure this aligns with your actual data structure
+        return data.result;
     } catch (error) {
         console.error('Fetching Featured videos failed:', error);
-        // Handle error as needed
+       
     }
 }
 
@@ -187,7 +195,7 @@ function Concern() {
 useEffect(() => {
   fetchFeaturedConcern().then(fetchedNews => {
     if (fetchedNews && Array.isArray(fetchedNews)) {
-      setFeaturedConcern(fetchedNews.slice(0, 12)); // Store only the first 12 items
+      setFeaturedConcern(fetchedNews.slice(0, 12)); 
     }
   });
 }, []);
@@ -206,14 +214,14 @@ async function fetchTrendingConcern() {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          // Include other headers if needed, like authorization tokens
+          
       },
       body: JSON.stringify({
           category: "Trending",
           'page': 1,
           'size': 1000,
           
-          // Include any other body data required by the API
+          
       })
   };
 
@@ -224,10 +232,10 @@ async function fetchTrendingConcern() {
       }
       const data = await response.json();
       console.log('API Response:', data.result);
-      return data.result; // Make sure this aligns with your actual data structure
+      return data.result; 
   } catch (error) {
       console.error('Fetching Featured videos failed:', error);
-      // Handle error as needed
+      
   }
 }
 
@@ -238,7 +246,7 @@ async function fetchTrendingConcern() {
 useEffect(() => {
   fetchTrendingConcern().then(fetchedNews => {
     if (fetchedNews && Array.isArray(fetchedNews)) {
-      setTrendingConcern(fetchedNews.slice(0, 12)); // Store only the first 12 items
+      setTrendingConcern(fetchedNews.slice(0, 12)); 
     }
   });
 }, []);
@@ -255,14 +263,14 @@ async function fetchLikedConcern() {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          // Include other headers if needed, like authorization tokens
+          
       },
       body: JSON.stringify({
           category: "Newly Added",
           'page': 1,
           'size': 1000,
           
-          // Include any other body data required by the API
+          
       })
   };
 
@@ -273,10 +281,10 @@ async function fetchLikedConcern() {
       }
       const data = await response.json();
       console.log('API Response:', data.result);
-      return data.result; // Make sure this aligns with your actual data structure
+      return data.result; 
   } catch (error) {
       console.error('Fetching Featured videos failed:', error);
-      // Handle error as needed
+      
   }
 }
 
@@ -286,7 +294,7 @@ async function fetchLikedConcern() {
 useEffect(() => {
   fetchLikedConcern().then(fetchedNews => {
     if (fetchedNews && Array.isArray(fetchedNews)) {
-      setLikedConcern(fetchedNews.slice(0, 12)); // Store only the first 12 items
+      setLikedConcern(fetchedNews.slice(0, 12)); 
     }
   });
 }, []);
@@ -308,7 +316,7 @@ const customStylesForFirstConcernCarousel = {
 const seeMoreButton1concern = () => (
   <button
     className="see-more-button1Concern"
-    onClick={() => navigate('/featuredconcern')} // Update onClick handler
+    onClick={() => navigate('/featuredconcern')} 
   >
     See More
   </button>
@@ -317,7 +325,7 @@ const seeMoreButton1concern = () => (
 const seeMoreButton2concern = () => (
   <button
     className="see-more-button2Concern"
-    onClick={() => navigate('/trendingconcern')} // Update onClick handler
+    onClick={() => navigate('/trendingconcern')} 
   >
     See More
   </button>
@@ -326,7 +334,7 @@ const seeMoreButton2concern = () => (
 const seeMoreButton3concern = () => (
   <button
     className="see-more-button3Concern"
-    onClick={() => navigate('/likedconcern')} // Update onClick handler
+    onClick={() => navigate('/likedconcern')} 
   >
     See More
   </button>
@@ -337,10 +345,10 @@ const seeMoreButton3concern = () => (
  
 
   const options = {
-    items: 4, // Display 4 cards at a time
-    nav: false, // Enable navigation arrows
-    rewind: false, // Do not rewind
-    dots: false, // Hide pagination dots
+    items: 4, 
+    nav: false, 
+    rewind: false, 
+    dots: false, 
   };
 
 
@@ -374,7 +382,7 @@ const seeMoreButton3concern = () => (
         <OwlCarousel options={options} ref={carouselRefs[0]}>
           
         {featuredConcern.map((item) => (
-                    <NewsCard key={item.Media.id} Media={item.Media} />
+                     <NewsCard key={item.Media.id} Media={item.Media} defaultImage={defaultImage} />
                 ))}
       
     
@@ -392,7 +400,7 @@ const seeMoreButton3concern = () => (
         <h1 className="h1v">🔥Trending Concern</h1>
         <OwlCarousel options={options} ref={carouselRefs[1]}>
         {trendingConcern.map((item) => (
-                    <NewsCard key={item.Media.id} Media={item.Media} />
+                     <NewsCard key={item.Media.id} Media={item.Media} defaultImage={defaultImage} />
                 ))}
         </OwlCarousel>
         {customNavButtonsConcern(1)}
@@ -407,7 +415,7 @@ const seeMoreButton3concern = () => (
         <h1 className="h1v">👍Liked Concern</h1>
         <OwlCarousel options={options} ref={carouselRefs[2]}>
         {likedConcern.map((item) => (
-                    <NewsCard key={item.Media.id} Media={item.Media} />
+                     <NewsCard key={item.Media.id} Media={item.Media} defaultImage={defaultImage} />
                 ))}
         </OwlCarousel>
         {customNavButtonsConcern(2)}

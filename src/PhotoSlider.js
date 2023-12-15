@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import './PhotoSlider.css';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
+import './PhotoSlider.css';
 
 function PhotoSlider({ videoUrls, mediaDescription }) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const nextVideo = () => {
-    setCurrentVideoIndex((prevIndex) =>
+    setCurrentVideoIndex(prevIndex =>
       prevIndex === videoUrls.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const previousVideo = () => {
-    setCurrentVideoIndex((prevIndex) =>
+    setCurrentVideoIndex(prevIndex =>
       prevIndex === 0 ? videoUrls.length - 1 : prevIndex - 1
     );
   };
 
   useEffect(() => {
-    // Automatically switch to the next video every 10 seconds
     const intervalId = setInterval(() => {
       nextVideo();
     }, 10000);
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [currentVideoIndex, videoUrls.length]); // Ensure videoUrls.length is included in the dependency array
+    return () => clearInterval(intervalId);
+  }, [currentVideoIndex, videoUrls.length]);
 
   return (
     <div className="photo-slider">
@@ -39,29 +36,17 @@ function PhotoSlider({ videoUrls, mediaDescription }) {
         height="100vh"
         onClick={nextVideo}
         muted={true}
-        config={{
-          youtube: {
-            playerVars: {
-              modestbranding: 1,
-              rel: 0,
-              quality: 'hd720',
-            },
-          },
-        }}
+        
       />
-      {/* Conditionally render the media description if it exists */}
-      {mediaDescription && mediaDescription[currentVideoIndex] && (
-        <div className="video-description">
-          {mediaDescription[currentVideoIndex]}
+       {mediaDescription && mediaDescription[currentVideoIndex] && (
+        <div className="media-info">
+          <h1 className="media-title">{mediaDescription[currentVideoIndex].media_title}</h1>
+          
         </div>
       )}
       <div className="slider-controls">
-        <button onClick={previousVideo} className="slide-button">
-          &lt;
-        </button>
-        <button onClick={nextVideo} className="slide-button">
-          &gt;
-        </button>
+        <button onClick={previousVideo} className="slide-button">&lt;</button>
+        <button onClick={nextVideo} className="slide-button">&gt;</button>
       </div>
     </div>
   );
@@ -69,7 +54,10 @@ function PhotoSlider({ videoUrls, mediaDescription }) {
 
 PhotoSlider.propTypes = {
   videoUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
-  mediaDescription: PropTypes.arrayOf(PropTypes.string), // Include the mediaDescriptions propType
+  mediaDescription: PropTypes.arrayOf(PropTypes.shape({
+    media_title: PropTypes.string,
+    media_description: PropTypes.string
+  })),
 };
 
 export default PhotoSlider;

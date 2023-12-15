@@ -46,12 +46,13 @@ const VideoCarousel = () => {
   
   const [playingVideoId, setPlayingVideoId] = useState(null);
 
-  const handleMouseEnter = (videoId) => {
-    setPlayingVideoId(videoId);
-  };
-
-  const handleMouseLeave = () => {
-    setPlayingVideoId(null);
+  const handleVideoClick = (videoId) => {
+    
+    if (playingVideoId === videoId) {
+      setPlayingVideoId(null); 
+    } else {
+      setPlayingVideoId(videoId); 
+    }
   };
   
   
@@ -65,7 +66,7 @@ const VideoCarousel = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Include other headers if needed, like authorization tokens
+            
         },
         body: JSON.stringify({
             category: "Featured",
@@ -73,7 +74,7 @@ const VideoCarousel = () => {
             'size': 100,
             'tags': 'all',
             'searchTerm': 'political',
-            // Include any other body data required by the API
+            
         })
     };
 
@@ -84,10 +85,10 @@ const VideoCarousel = () => {
         }
         const data = await response.json();
         console.log('API Response:', data.result);
-        return data.result; // Make sure this aligns with your actual data structure
+        return data.result; 
     } catch (error) {
         console.error('Fetching Featured videos failed:', error);
-        // Handle error as needed
+        
     }
 }
 
@@ -112,7 +113,7 @@ async function fetchTrendingVideos() {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          // Include other headers if needed, like authorization tokens
+          
       },
       body: JSON.stringify({
           category: "Trending",
@@ -120,7 +121,7 @@ async function fetchTrendingVideos() {
           'size': 100,
           'tags': 'all',
           'searchTerm': 'political',
-          // Include any other body data required by the API
+          
       })
   };
 
@@ -131,10 +132,10 @@ async function fetchTrendingVideos() {
       }
       const data = await response.json();
       console.log('API Response:', data.result);
-      return data.result; // Make sure this aligns with your actual data structure
+      return data.result; 
   } catch (error) {
       console.error('Fetching Featured videos failed:', error);
-      // Handle error as needed
+      
   }
 }
 
@@ -159,7 +160,7 @@ async function fetchLikedVideos() {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
-          // Include other headers if needed, like authorization tokens
+          
       },
       body: JSON.stringify({
           category: "Newly Added",
@@ -167,7 +168,7 @@ async function fetchLikedVideos() {
           'size': 100,
           'tags': 'all',
           'searchTerm': 'political',
-          // Include any other body data required by the API
+          
       })
   };
 
@@ -178,10 +179,10 @@ async function fetchLikedVideos() {
       }
       const data = await response.json();
       console.log('API Response:', data.result);
-      return data.result; // Make sure this aligns with your actual data structure
+      return data.result; 
   } catch (error) {
       console.error('Fetching Featured videos failed:', error);
-      // Handle error as needed
+      
   }
 }
 
@@ -211,7 +212,7 @@ useEffect(() => {
   const seeMoreButton1 = () => (
     <button
       className="see-more-button1"
-      onClick={() => navigate('/featured')} // Update onClick handler
+      onClick={() => navigate('/featured')} 
     >
       See More
     </button>
@@ -220,7 +221,7 @@ useEffect(() => {
   const seeMoreButton2 = () => (
     <button
       className="see-more-button1"
-      onClick={() => navigate('/trending')} // Update onClick handler
+      onClick={() => navigate('/trending')} 
     >
       See More
     </button>
@@ -229,7 +230,7 @@ useEffect(() => {
   const seeMoreButton3 = () => (
     <button
       className="see-more-button1"
-      onClick={() => navigate('/liked')} // Update onClick handler
+      onClick={() => navigate('/liked')} 
     >
       See More
     </button>
@@ -284,13 +285,13 @@ useEffect(() => {
         <h1 className="h1v"><span style={{ color: 'orange' }}>★</span> Featured News</h1>
         <OwlCarousel options={options} ref={carouselRefs[0]}>
         
-        {featuredData.slice(0, 12).map((video) => ( 
-             <div key={video.id} className="video-card"
-             onMouseEnter={() => handleMouseEnter(video.id)}
-             onMouseLeave={handleMouseLeave}
-             
-             >
-              <div className="video-info-top"> {/* Container for the video info to be on top */}
+        {featuredData.slice(0, 12).map((video) => (
+            <div 
+              key={video.id} 
+              className="video-card"
+              onClick={() => handleVideoClick(video.id)}
+            >
+              <div className="video-info-top"> 
       <div className="video-item-posted-dateforVCF">{timeAgo(video.created_date)}</div>
       <div className="video-item-iconsforVCF">
         <span>👍 {video.liked_count}</span>
@@ -311,7 +312,7 @@ useEffect(() => {
                   youtube: {
                     playerVars: {
                       
-                      rel: 0, // Hide related videos at the end
+                      rel: 0, 
                       quality: 'hd720',
                       
                     },
@@ -335,12 +336,12 @@ useEffect(() => {
         <h1 className="h1v">🔥Trending News</h1>
         <OwlCarousel options={options} ref={carouselRefs[1]}>
         {trendingData.slice(0, 12).map((video) => ( 
-              <div key={video.id}  className="video-card"
-              onMouseEnter={() => handleMouseEnter(video.id)}
-             onMouseLeave={handleMouseLeave}
-              
-              >
-                 <div className="video-info-top"> {/* Container for the video info to be on top */}
+               <div 
+               key={video.id} 
+               className="video-card"
+               onClick={() => handleVideoClick(video.id)}
+             >
+                 <div className="video-info-top"> 
       <div className="video-item-posted-dateforVCT">{timeAgo(video.created_date)}</div>
       <div className="video-item-iconsforVCT">
         <span>👍 {video.liked_count}</span>
@@ -381,13 +382,12 @@ useEffect(() => {
         <h1 className="h1v">👍Liked News</h1>
         <OwlCarousel options={options} ref={carouselRefs[2]}>
         {likedData.slice(0, 12).map((video) => ( 
-             <div key={video.id}className="video-card"
-             
-             onMouseEnter={() => handleMouseEnter(video.id)}
-             onMouseLeave={handleMouseLeave}
-             
-             >
-               <div className="video-info-top"> {/* Container for the video info to be on top */}
+              <div 
+              key={video.id} 
+              className="video-card"
+              onClick={() => handleVideoClick(video.id)}
+            >
+               <div className="video-info-top"> 
       <div className="video-item-posted-dateforVCL">{timeAgo(video.created_date)}</div>
       <div className="video-item-iconsforVCL">
         <span>👍 {video.liked_count}</span>

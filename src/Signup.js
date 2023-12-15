@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import './Signup.css'; // Import your CSS for styling
+import './Signup.css'; 
 import cmalogo from "./Cma.png";
 import PropTypes from 'prop-types';
 
-// Snackbar Alert component
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -25,7 +25,7 @@ const Signup = ({ toggleForm }) => {
   const navigate = useNavigate();
 
   const handleGetOtp = () => {
-    // Simulated OTP retrieval process
+    
     const fakeOtp = Math.floor(100000 + Math.random() * 900000).toString();
     setReceivedOtp(fakeOtp);
      
@@ -34,7 +34,7 @@ const Signup = ({ toggleForm }) => {
     setSnackbarOpen(true);
   };
 
-  const handleSignup = async () => { // <-- This function needs to be async
+  const handleSignup = async () => { 
 
     sessionStorage.setItem('registeredMobile', mobileNumber);
     
@@ -49,7 +49,7 @@ const Signup = ({ toggleForm }) => {
     setSnackbarMessage('Signup successful! Redirecting to login...');
     setSnackbarSeverity('success');
     setSnackbarOpen(true);
-    setTimeout(() => navigate('/login'), 3000); // Redirect to login after a delay
+    setTimeout(() => navigate('/login'), 3000); 
   };
     
 
@@ -136,7 +136,7 @@ const inputStyle = {
   border: '1px solid #ccc',
   borderRadius: '5px',
   marginLeft: '220px',
-  marginBottom: '10px', // added for spacing
+  marginBottom: '10px', 
 };
 
 const buttonStyle = {
@@ -148,7 +148,7 @@ const buttonStyle = {
   cursor: 'pointer',
   transition: 'background-color 0.3s ease',
   marginLeft: '220px',
-  marginTop: '10px', // added for spacing
+  marginTop: '10px', 
 };
 
 Signup.propTypes = {

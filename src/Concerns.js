@@ -1,5 +1,5 @@
 import React from 'react';
-import './Concern.css'; // Import your CSS for styling
+import './Concern.css'; 
 
 function Concerns() {
   return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PropTypes from 'prop-types';
 import './NewsForTrending.css';
+import defaultImage from './photos/altCMA.jpg';
 
 function timeAgo(dateParam) {
     if (!dateParam) {
@@ -52,10 +53,12 @@ const NewsCard = ({ Media }) => {
                 
             >
                 
-                <img src={Media.thumbnail} alt={Media.media_title} className="news-imageFN" />
+                <img 
+                  src={Media.thumbnail || defaultImage} 
+                  alt={Media.media_title || 'Default image'} className="news-imageTN" />
                 {showDescription && (
-                    <div className="news-contentFN">
-                        <p className="news-descriptionFN">{Media.media_description}</p>
+                    <div className="news-contentTN">
+                        <p className="news-descriptionTN">{Media.media_description}</p>
                     </div>
                 )}
             </div>
@@ -84,7 +87,7 @@ const NewsForTrending = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // Include other necessary headers, such as authorization tokens
+                
             },
             body: JSON.stringify({
                 category: "Trending",
@@ -101,7 +104,7 @@ const NewsForTrending = () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            return data.result; // Assuming 'result' contains the array of news items
+            return data.result; 
         } catch (error) {
             console.error('Fetching Trending news failed:', error);
         }
@@ -118,7 +121,7 @@ const NewsForTrending = () => {
     };
 
     useEffect(() => {
-         // Fetch initial news items
+         
     }, []);
 
 
@@ -135,10 +138,10 @@ const NewsForTrending = () => {
                 next={fetchMoreData}
                 hasMore={hasMore}
                 loader={<h4>Loading...</h4>}
-                className="news-containerFN"
+                className="news-containerTN"
             >
                 {news.map((item) => (
-                    <NewsCard key={item.Media.id} Media={item.Media} />
+                    <NewsCard key={item.Media.id} Media={item.Media} defaultImage={defaultImage} />
                 ))}
             </InfiniteScroll>
         </div>
@@ -157,8 +160,8 @@ const NewsForTrending = () => {
           media_description: PropTypes.string,
           liked_count: PropTypes.number,
           viewed_count: PropTypes.number,
-          created_date: PropTypes.string, // or PropTypes.instanceOf(Date) if it's a Date object
-          id: PropTypes.number, // Assuming the ID is a number, adjust if it's a string
+          created_date: PropTypes.string, 
+          id: PropTypes.number, 
         }).isRequired,
 };
 

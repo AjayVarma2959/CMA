@@ -16,12 +16,10 @@
     color:white;
   }
   
-  /* Navbar.css */
-/* ... (previous styles) ... */
-
+  
 .search-bar {
     padding: 10px;
-    border-radius: 10px; /* Add border radius */
+    border-radius: 10px; 
     
     
    
@@ -29,28 +27,28 @@
 
   
   .search-bar input[type="text"] {
-    padding: 15px; /* Increase padding for text input */
+    padding: 15px;
     border: none;
-    border-radius: 10px; /* Add border radius */
+    border-radius: 10px; 
     
    
   }
   
   .search-bar input[type="text"]:focus {
-    outline: none; /* Remove the default focus outline */
+    outline: none; 
     box-shadow: 0 0 5px dark rgb(79, 197, 128); 
-    /* Add a subtle box shadow on focus */
+    
     
   }
   .search-bar button {
-    margin-left: 30px; /* Adjust the margin as needed */
+    margin-left: 30px; 
     padding: 5px;
     margin-top: 2px;
     padding-bottom: 10px;
     width: 100px;
   }
   
-  /* ... (remaining styles) ... */
+  
   
   
   input[type="text"] {
@@ -75,7 +73,7 @@
   .nav-links {
     
     display: flex;
-    gap: 10px; /* Define the constant gap between navbar items */
+    gap: 10px; 
   }
   
   .nav-links a {
@@ -85,10 +83,10 @@
     text-decoration: none;
     display: flex;
     justify-content: space-evenly;
-    align-items: center; /* Vertically center the text and the button-like border */
+    align-items: center; 
     color:white;
     padding: 5px 10px;
-    border: 2px solid transparent; /* Initially transparent border */
+    border: 2px solid transparent; 
     border-radius: 10px;
     border: 2px solid black;
   }

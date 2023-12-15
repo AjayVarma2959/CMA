@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PropTypes from 'prop-types';
 import './NewsForLiked.css';
+import defaultImage from './photos/altCMA.jpg';
 
 function timeAgo(dateParam) {
     if (!dateParam) {
@@ -52,7 +53,9 @@ const NewsCard = ({ Media }) => {
                 
             >
                 
-                <img src={Media.thumbnail} alt={Media.media_title} className="news-imageLN" />
+                <img 
+                  src={Media.thumbnail || defaultImage} 
+                  alt={Media.media_title || 'Default image'}  className="news-imageLN" />
                 {showDescription && (
                     <div className="news-contentLN">
                         <p className="news-descriptionLN">{Media.media_description}</p>
@@ -84,7 +87,7 @@ const NewsForLiked = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                // Include other necessary headers, such as authorization tokens
+                
             },
             body: JSON.stringify({
                 category: "Newly Added",
@@ -101,7 +104,7 @@ const NewsForLiked = () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            return data.result; // Assuming 'result' contains the array of news items
+            return data.result; 
         } catch (error) {
             console.error('Fetching Trending news failed:', error);
         }
@@ -118,7 +121,7 @@ const NewsForLiked = () => {
     };
 
     useEffect(() => {
-         // Fetch initial news items
+         
     }, []);
 
 
@@ -138,7 +141,7 @@ const NewsForLiked = () => {
                 className="news-containerLN"
             >
                 {news.map((item) => (
-                    <NewsCard key={item.Media.id} Media={item.Media} />
+                     <NewsCard key={item.Media.id} Media={item.Media} defaultImage={defaultImage} />
                 ))}
             </InfiniteScroll>
         </div>

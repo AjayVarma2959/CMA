@@ -1,6 +1,6 @@
-/* News.css */
 
-/* Style the video container */
+
+
 .video-cardConcern {
   margin: 0;
   padding: 0;
@@ -25,13 +25,13 @@
     
   }
   
-  /* Style the carousel container */
+  
   .owl-carousel {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* This will space out your video cards evenly */
-    padding: 25px; /* This padding replaces the margin on video-card for spacing */
-    gap: 10px; /* This adds spacing between item*/
+    justify-content: space-between; 
+    padding: 25px;
+    gap: 10px;
   }
   
   .video-carousel-containerConcern {
@@ -43,50 +43,50 @@
   }
   
   .h1v {
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px; 
     margin-bottom: 10px;
-    color: #3c11ea; /* Set the desired text color */
+    color: #3c11ea; 
   }
   
-  /* Add these styles to your VideoCarousel.css file */
+  
 
-/* Custom styles for the "Prev" and "Next" buttons */
+
 .prev-buttonConcern,
 .next-buttonConcern {
   margin-top: 50px;
   
   justify-content: space-between;
-  background-color: #333; /* Background color for the buttons */
-  color: #fff; /* Text color for the buttons */
-  font-size: 24px; /* Font size */
-  border: none; /* Remove the button border */
-  padding: 10px 20px; /* Padding inside the buttons */
-  cursor: pointer; /* Change the cursor to a pointer on hover */
-  border-radius: 50%; /* Make the buttons circular */
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  background-color: #333; 
+  color: #fff; 
+  font-size: 24px; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  border-radius: 50%; 
+  transition: background-color 0.3s ease; 
 }
 
-/* Style for the "Prev" button on hover */
+
 .prev-buttonConcern:hover {
-  background-color: #555; /* Darker background color on hover */
+  background-color: #555; 
 }
 
-/* Style for the "Next" button on hover */
+
 .next-buttonConcern:hover {
-  background-color: #555; /* Darker background color on hover */
+  background-color: #555; 
 }
 
-/* VideoCarousel.css */
+
 .see-more-button1Concern {
   position: absolute;
-  margin-top: 25px; /* Adjust the top positioning as needed */
-  margin-left: 1360px; /* Adjust the right positioning as needed */
-  background-color: #f44336; /* Button background color */
-  color: #fff; /* Button text color */
-  padding: 5px 10px; /* Padding around the button text */
+  margin-top: 25px; 
+  margin-left: 1360px; 
+  background-color: #f44336; 
+  color: #fff; 
+  padding: 5px 10px; 
   border: none;
   cursor: pointer;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 4px; 
 }
 
 
@@ -94,14 +94,14 @@
 
 .see-more-button2Concern {
   position: absolute;
-  margin-top: 25px; /* Adjust the top positioning as needed */
-  margin-left: 1360px; /* Adjust the right positioning as needed */
-  background-color: #f44336; /* Button background color */
-  color: #fff; /* Button  text color */
-  padding: 5px 10px; /* Padding around the button text */
+  margin-top: 25px; 
+  margin-left: 1360px; 
+  background-color: #f44336; 
+  color: #fff; 
+  padding: 5px 10px; 
   border: none;
   cursor: pointer;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 4px; 
 }
 
 
@@ -109,33 +109,33 @@
 
 .see-more-button3Concern {
   position: absolute;
-  margin-top: 25px; /* Adjust the top positioning as needed */
-  margin-left: 1360px; /* Adjust the right positioning as needed */
-  background-color: #f44336; /* Button background color */
-  color: #fff; /* Button text color */
-  padding: 5px 10px; /* Padding around the button text */
+  margin-top: 25px; 
+  margin-left: 1360px; 
+  background-color: #f44336; 
+  color: #fff; 
+  padding: 5px 10px; 
   border: none;
   cursor: pointer;
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 4px; 
 }
 
 
 .video-item-infoConcernF {
   display: flex;
-  justify-content: center; /* This will put space between the items */
+  justify-content: center; 
   gap: 40px;
-  width: 100%; /* Ensure the div takes the full width */
-  margin-top: 3px; /* Spacing between video and info below */
+  width: 100%; 
+  margin-top: 3px; 
   
   
 }
 
 .video-item-infoConcernT {
   display: flex;
-  justify-content: center; /* This will put space between the items */
+  justify-content: center; 
   gap: 40px;
-  width: 100%; /* Ensure the div takes the full width */
-  margin-top: 3px; /* Spacing between video and info below */
+  width: 100%; 
+  margin-top: 3px; 
   
   
 }
@@ -143,10 +143,10 @@
 
 .video-item-infoConcernL {
   display: flex;
-  justify-content: center; /* This will put space between the items */
+  justify-content: center; 
   gap: 40px;
-  width: 100%; /* Ensure the div takes the full width */
-  margin-top: 3px; /* Spacing between video and info below */
+  width: 100%; 
+  margin-top: 3px; 
   
   
 }

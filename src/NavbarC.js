@@ -225,7 +225,7 @@ const [villages, setVillages] = useState([]);
         </div>
         <CSSTransition
           in={showVideoIcons}
-          timeout={500} // Animation duration in milliseconds
+          timeout={500} 
           classNames="video-icons"
           unmountOnExit
         >
